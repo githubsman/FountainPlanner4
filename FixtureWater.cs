@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using FountainDesign;
 
 namespace FountainDesign
@@ -14,15 +15,15 @@ namespace FountainDesign
         //    //    ... etc.
         //}
 
-        public string Model_ID;
-        public string Type;
-        public string Size;             // "HBN", "Hollow bore", "jet", "small" 
+        public string Model_ID = "HBN";
+        public string Type;             // "HBN", "Hollow bore", "jet", "small" 
         public string Effect;           // "A solid stream of water in a flat shape (like a fan)."
+        public string Size;             // small, medium, large
         public byte Weight;             // hectograms  ( 5 == 1.1 lbs )
-        //public byte Pressure;           // PSI
+        //public byte Pressure;         // PSI
         //public string Description;    //
         //public string Construction;   // "Machined cast bronze and brass construction..."
-        //public bool flowActive;       // for simulating system-total pressure states
+        //public bool flowActive;       // false        for simulating system-total pressure states
 
         public byte EffectHeight
         {
@@ -33,7 +34,7 @@ namespace FountainDesign
 
         public byte Pressure
         {
-            get { return this.Pressure; } 
+            get { return 4; } 
             set 
             {
                 double thisPressure = (EffectHeight / 2);  // multiplierPressure = 2 ? 
@@ -41,53 +42,14 @@ namespace FountainDesign
                 string myMsg = Model_ID + ": " + this.EffectHeight + " = " + thisPressure;
                 Logger.logEntry("Info", myMsg);
             }
-
         }
 
-        //internal byte SupplyPressure(string fixtureSize, string nozzleType, byte effectHeight)
-        //{
-
-        //    byte basePressure;
-        //    double thisPressure, multiplierPressure;
-
-        //    switch (nozzleType)
-        //    {
-        //        case "spray":
-        //            basePressure = 5;
-        //            break;
-        //        case "mist":
-        //            basePressure = 7;
-        //            break;
-        //        case "jet":
-        //            basePressure = 6;
-        //            break;
-        //        default:
-        //            basePressure = 0;
-        //            break;
-        //    }
-
-        //    switch (fixtureSize)
-        //    {
-        //        case "small":
-        //            multiplierPressure = 0.5;
-        //            break;
-        //        case "medium":
-        //            multiplierPressure = 1.0;
-        //            break;
-        //        case "large":
-        //            multiplierPressure = 1.5;
-        //            break;
-        //        default:
-        //            multiplierPressure = 0;
-        //            break;
-        //    }
-
-        //    //  double   =  integer     *    double          * (  integer    / integer )
-        //    thisPressure = basePressure * multiplierPressure * (effectHeight / 2);
-
-        //    Logger.logEntry("info", "pressure = " + thisPressure as string);
-
-        //    return (byte)thisPressure;
-        //}
     }
+
+    public class FixtureWaterJet : FixtureWater
+    {
+        public string Model_ID = "JET";
+
+    }
+
 }

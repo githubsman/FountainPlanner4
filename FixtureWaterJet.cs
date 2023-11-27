@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+//using System;
 using FountainDesign;
 
 namespace FountainDesign
@@ -13,5 +14,4 @@ namespace FountainDesign
 	//public static class JET_Small : Fixture_JET { Weight = 5;		basePressure = 7; }
 	//public static class JET_Medium : Fixture_JET { Weight = 9;	basePressure = 7; }
 	//public static class JET_Large : Fixture_JET { Weight = 16;	basePressure = 7; }
-
 }
