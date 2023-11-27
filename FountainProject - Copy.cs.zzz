@@ -1,0 +1,12 @@
+﻿namespace FountainDesign
+{
+    internal class FountainProject
+    {
+    }
+
+    private void FountainProjectBegin();
+    {
+            FountainProject MyProject;
+            MyProject = new FountainProject;
+    }
+}
