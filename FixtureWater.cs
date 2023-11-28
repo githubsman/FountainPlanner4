@@ -1,34 +1,50 @@
 ﻿
+/* FixtureWater is the base class for a water nozzle.  
+ * See real-life details (not well modelled) in the docs/ folder.
+ * 
+ * A subclass is found in FixtureWaterJet.cs, but I can't get it working.  <<<< FIXME <<<<<<<<
+ * 
+ *    TODO allow a variety of sizes (for most kinds);
+ *           size determines basePressure,
+ *           basePressure with EffectHeight determines Pressure,
+ *           Pressure contributes to totalPressure.
+ * 
+ *    FUTURE (or GONE WILD):  
+ *      //public bool flowActive;   // For simulating system-total pressure states.
+ *                          // This gets interesting when you have a control system that
+ *                          // turns nozzles off and on, either in sync or (apparent) random.
+ *      //public string Description;    // Marketing 
+ *      //public string Construction;   // Eng. spec'n:  "Machined cast bronze and brass construction..."
+ *      
+ */ 
 using System;
-using FountainDesign;
+using FountainDesign;       // LEARN why is 'using LocalNamespace' needed or not needed?
 
 namespace FountainDesign
 {
     public class FixtureWater
     {
-        //interface ISpecs
+
+
+
+        //interface ISpecs   //TODO? Set up an interface
         //{
-        //    string Model_ID { get; set; }
-        //    //string Description { get; set; }
         //    string Type { get; set; }
-        //    string Size { get; set; }
-        //    //    ... etc.
+        //    string Size { get; set; }     //   etc.
         //}
 
-        public string Model_ID = "HBN";
-        public string Type;             // "HBN", "Hollow bore", "jet", "small" 
+        public string Model_ID = "HBN"; // "HBN", "JET"
+        public string Type;             // "Hollow bore", "jet"
         public string Effect;           // "A solid stream of water in a flat shape (like a fan)."
         public string Size;             // small, medium, large
         public byte Weight;             // hectograms  ( 5 == 1.1 lbs )
         //public byte Pressure;         // PSI
-        //public string Description;    //
-        //public string Construction;   // "Machined cast bronze and brass construction..."
-        //public bool flowActive;       // false        for simulating system-total pressure states
+
 
         public byte EffectHeight
         {
-            get { return this.EffectHeight; }
-            set { byte itemNo = value; }
+            get { return EffectHeight; }
+            set { byte EffectHeight; }
         }
 
 
@@ -39,17 +55,10 @@ namespace FountainDesign
             {
                 double thisPressure = (EffectHeight / 2);  // multiplierPressure = 2 ? 
                 thisPressure = thisPressure * Pressure;
-                string myMsg = Model_ID + ": " + this.EffectHeight + " = " + thisPressure;
+                string myMsg = Model_ID + ": " + EffectHeight + " = " + thisPressure;
                 Logger.logEntry("Info", myMsg);
             }
         }
-
-    }
-
-    public class FixtureWaterJet : FixtureWater
-    {
-        public string Model_ID = "JET";
-
     }
 
 }

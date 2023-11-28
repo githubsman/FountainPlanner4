@@ -4,8 +4,12 @@ using FountainDesign;
 
 namespace FountainDesign
 {
+
+	// FIXME This subclass is not recognized!
+
 	public class FixtureWaterJet : FixtureWater
 	{
+
 		Model_ID = "Jet";
 		Effect = "A solid stream of water";
 		Construction = "Machined cast bronze and brass construction";

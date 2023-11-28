@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using FountainDesign;
 
-namespace FountainDesign        //MARK Rename this using Ctrl-R, Ctrl-R
+namespace FountainDesign        
 {
     public partial class MainWindow : Window
     {

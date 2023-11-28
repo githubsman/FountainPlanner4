@@ -9,10 +9,12 @@
     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
         <TextBlock FontSize="12px" Margin="8" Text="Configure water fixtures, learn the total water pressure." />
 
-        <!-- Formatting is set up in App.xaml. See:
-                learn.microsoft.com/en-us/dotnet/desktop/wpf/controls/walkthrough-create-a-button-by-using-xaml?view=netframeworkdesktop-4.8 -->
+        <!-- GONE WILD Set up formatting in App.xaml
+             learn.microsoft.com/en-us/dotnet/desktop/wpf/controls/walkthrough-create-a-button-by-using-xaml?view=netframeworkdesktop-4.8 
+               -->
 
-        <!-- TODO Set these up as an array -->
+
+        <!-- GONE WILD Set up data binding  -->
         <Grid Name="mainGrid">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
@@ -33,7 +35,7 @@
             <TextBlock Width="120" Grid.Row="0" Grid.Column="3" Text="EFFECT HEIGHT" />
 
             <TextBox Name="WaterFixture_1_Quantity"   Width="60" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Text='1' />
-            <TextBox Name="WaterFixture_1_NozzleType"   Width="60" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Text='Jet' />
+            <TextBox Name="WaterFixture_1_NozzleType"  Width="60" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Text='Jet' />
             <TextBox Name="WaterFixture_1_NozzleSize"   Width="100" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" Text='Medium' />
             <ComboBox Name="WaterFixture_1_EffectHeight" Width="120" Grid.Row="1" Grid.Column="3">
                 <ComboBoxItem>4</ComboBoxItem>
@@ -42,7 +44,7 @@
             </ComboBox>
 
             <TextBox Name="WaterFixture_2_Quantity"   Width="60" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" Text='1' />
-            <TextBox Name="WaterFixture_2_NozzleType"   Width="60" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" Text='Spray' />
+            <TextBox Name="WaterFixture_2_NozzleType"  Width="60" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" Text='Spray' />
             <TextBox Name="WaterFixture_2_NozzleSize"   Width="100" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" Text='Medium' />
             <ComboBox Name="WaterFixture_2_EffectHeight" Width="120" Grid.Row="2" Grid.Column="3">
                 <ComboBoxItem>4</ComboBoxItem>
@@ -61,18 +63,16 @@
 
         </Grid>
         
-        
         <Grid Name="resultGrid" HorizontalAlignment="Center" >
             <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                     <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition />
+                    <RowDefinition />
             </Grid.RowDefinitions>
 
             <Button Name="GetResult" Click="OnClick" Width="80" Margin="20" Grid.Row="0" Grid.Column="0" >Calculate</Button>
-
             <TextBox Name="resultPSI" Width="40" Margin="20" Grid.Row="0" Grid.Column="1" ></TextBox>
 
         </Grid>
