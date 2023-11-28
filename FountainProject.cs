@@ -38,7 +38,7 @@ namespace FountainDesign
             int myPressure;
             for (int i = 0; i < 3; i++)
             {
-                myPressure = myWaterFixtures[i].Pressure;
+                myPressure = 11;         //FIXME  myWaterFixtures[i].Pressure;
                 totalPressure += myPressure;
             }
 
