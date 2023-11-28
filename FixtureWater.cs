@@ -55,8 +55,10 @@ namespace FountainDesign
             {
                 double thisPressure = (EffectHeight / 2);  // multiplierPressure = 2 ? 
                 thisPressure = thisPressure * Pressure;
-                string myMsg = Model_ID + ": " + EffectHeight + " = " + thisPressure;
-                Logger.logEntry("Info", myMsg);
+                
+                // TODO Get the logger to work again, and make meaningful entries.
+                // string myMsg = Model_ID + ": " + EffectHeight + " = " + thisPressure;
+                // Logger.logEntry("Info", myMsg);
             }
         }
     }
