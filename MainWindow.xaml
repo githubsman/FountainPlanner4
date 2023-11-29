@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FountainDesign"
         mc:Ignorable="d"
-        Title="Welcome to the Fountain Planner" Height="450" Width="800">
+        Title="Welcome to the Fountain Planning Application" Height="450" Width="800">
     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
         <TextBlock FontSize="12px" Margin="8" Text="Configure water fixtures, learn the total water pressure." />
 
@@ -44,7 +44,7 @@
             </ComboBox>
 
             <TextBox Name="WaterFixture_2_Quantity"   Width="60" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" Text='1' />
-            <TextBox Name="WaterFixture_2_NozzleType"  Width="60" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" Text='Spray' />
+            <TextBox Name="WaterFixture_2_NozzleType"  Width="60" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" Text='Jet' />
             <TextBox Name="WaterFixture_2_NozzleSize"   Width="100" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" Text='Medium' />
             <ComboBox Name="WaterFixture_2_EffectHeight" Width="120" Grid.Row="2" Grid.Column="3">
                 <ComboBoxItem>4</ComboBoxItem>
@@ -53,7 +53,7 @@
             </ComboBox>
 
             <TextBox Name="WaterFixture_3_Quantity"  Width="60" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" Text='1' />
-            <TextBox Name="WaterFixture_3_NozzleType"   Width="60" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" Text='Mist' />
+            <TextBox Name="WaterFixture_3_NozzleType"   Width="60" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" Text='Jet' />
             <TextBox Name="WaterFixture_3_NozzleSize"   Width="100" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" Text='Medium' />
             <ComboBox Name="WaterFixture_3_EffectHeight" Width="120" Grid.Row="3" Grid.Column="3">
                 <ComboBoxItem>4</ComboBoxItem>

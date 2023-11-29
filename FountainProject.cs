@@ -36,11 +36,12 @@ namespace FountainDesign
             // TODO Implement nozzle count (the user form offers "quantity" but does nothing). 
             int totalPressure = 0;
             int myPressure;
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < myWaterFixtures.Length; i++)
             {
-                myPressure = 11;         //FIXME  myWaterFixtures[i].Pressure;
-                totalPressure += myPressure;
+                myPressure = myWaterFixtures[i].Pressure;
+                totalPressure += myPressure; 
             }
+
 
             // Ensure MaxPressureTotal is not exceeded.
             //      TODO Raise flag in UI if it is exceeded.
