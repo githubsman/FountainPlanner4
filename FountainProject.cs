@@ -36,9 +36,6 @@ namespace FountainDesign
 
         public int getTotalPressure()
         {
-            // FIXME Improve calculation (no real physics needed... 
-
-            // TODO Implement nozzle count (the user form offers "f_Quantity" but does nothing). 
             int totalPressure = 0;
             int myPressure;
             int myQuantity;

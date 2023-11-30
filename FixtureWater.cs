@@ -34,14 +34,14 @@ namespace FountainDesign
         //public byte effectPressure { get; set; }
 
 
-        ///public FixtureWater(string inType, string inSize, byte inEffectHeight, byte inWeight)
-        public FixtureWater()
+        public FixtureWater(string inType, string inSize, byte inEffectHeight, byte inQuantity)
+        //public FixtureWater()
         {
             
-            ///f_Type = inType;
-            ///f_Size = inSize;
-            ///effectHeight = inEffectHeight;
-            ///f_Weight = inWeight;
+            f_Type = inType;
+            f_Size = inSize;
+            effectHeight = inEffectHeight;
+            quantity = inQuantity;
 
             set_effectPressure(f_Type, f_Size, f_minPressure, effectHeight);
 
@@ -50,7 +50,7 @@ namespace FountainDesign
         }
             internal void set_effectPressure(string f_Type, string f_Size, byte f_minPressure, byte effectHeight)
             {
-                double thisPressure = effectHeight / 2; 
+                double thisPressure = effectHeight / 2;  
                 thisPressure = thisPressure * f_minPressure;
 
                 effectPressure = Convert.ToByte(thisPressure);

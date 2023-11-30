@@ -32,8 +32,6 @@ namespace FountainDesign
 
             //TODO Allow user to set MaxPressureTotal
 
-            //public FixtureWater[] myWaterFixtures = new FixtureWater[3];
-
             MyProject.FountainProjectBegin();
 
 
