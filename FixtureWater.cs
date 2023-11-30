@@ -5,52 +5,59 @@
  * 
  *    TODO allow a variety of sizes (for most kinds);
  *           size determines basePressure,
- *           basePressure with EffectHeight determines Pressure,
+ *           basePressure with effectHeight determines Pressure,
  *           Pressure contributes to totalPressure.
  * 
  *    FUTURE (or GONE WILD):  
- *      //public bool flowActive;   // For simulating system-total pressure states.
- *                                  // This gets interesting when you have a control system that
- *                                  // turns nozzles off and on, either in sync or (apparent) random.
- *      //public string Description;    // Marketing 
- *      //public string Construction;   // Eng. spec'n:  "Machined cast bronze and brass construction..."
- *      //public string Aesthetic;      // "A solid stream of water in a flat shape (like a fan)."
+ *      // flowActive       // For simulating system-total pressure states.
+ *                                  // On/Off reflects a control system that
+ *                                  // controls nozzles, either in sync or (apparent) random.
+ *      // f_Construction   // Eng. spec'n:  "Machined cast bronze and brass construction..."
+ *      // f_Aesthetic      // "A solid stream of water in a flat shape (like a fan)."
+ *      // f_Cost           // cost in dollars
+ *      // f_Weight         // hectograms  ( 5 == 1.1 lbs )*      
  */
 
 using System;
-using FountainDesign;       // LEARN why is 'using LocalNamespace' needed or not needed?
-
 
 namespace FountainDesign
 {
     public class FixtureWater
     {
-        public string Type;             // "Hollow bore", "jet"
-        public string Size;             // small, medium, large
-        public byte EffectHeight;
-        public byte Weight;             // hectograms  ( 5 == 1.1 lbs )
-        public byte Pressure;           // PSI
+        public string f_Type;             // "Hollow bore", "jet"
+        public string f_Size;             // small, medium, large
+        public byte effectHeight;
+        public byte quantity;
+        public byte f_Weight;             // hectograms  ( 5 == 1.1 lbs )
+        public byte f_minPressure;        // PSI
+        public byte effectPressure;
+        //public byte effectPressure { get; set; }
 
+
+        ///public FixtureWater(string inType, string inSize, byte inEffectHeight, byte inWeight)
         public FixtureWater()
         {
-            // Type = inType; 
-            // Size = inSize; 
-            // EffectHeight = inEffectHeight;
-            // Weight = inWeight;
+            
+            ///f_Type = inType;
+            ///f_Size = inSize;
+            ///effectHeight = inEffectHeight;
+            ///f_Weight = inWeight;
+
+            set_effectPressure(f_Type, f_Size, f_minPressure, effectHeight);
+
+
+
         }
+            internal void set_effectPressure(string f_Type, string f_Size, byte f_minPressure, byte effectHeight)
+            {
+                double thisPressure = effectHeight / 2; 
+                thisPressure = thisPressure * f_minPressure;
 
-        public int getPressure()
-        {
+                effectPressure = Convert.ToByte(thisPressure);
+            }
 
-            double thisPressure = (EffectHeight / 2);  // multiplierPressure = 2 ? 
-            thisPressure = thisPressure * Pressure;
 
-            // TODO Get the logger to work again, and make meaningful entries.
-            // string myMsg = Model_ID + ": " + EffectHeight + " = " + thisPressure;
-            // Logger.logEntry("Info", myMsg);
-
-            return Convert.ToByte(thisPressure);
-        }
     }
-
 }
+
+

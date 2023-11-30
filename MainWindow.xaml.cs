@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using FountainDesign;
 
-namespace FountainDesign        
+namespace FountainDesign
 {
     public partial class MainWindow : Window
     {
@@ -43,37 +43,41 @@ namespace FountainDesign
         void OnClick(object sender, RoutedEventArgs e)
         {
 
-            //FIXME  All this happens in response to user action; it needs to go under OnClick (at least provisionally)
-
-            //TODO Call classes within this for() loop.
             for (int i = 0; i < MyProject.myWaterFixtures.Length; i++)
             {
-                string Type = "";
-                string Size = "";
-                byte EffectHeight = 0;
+                string f_Type = "";
+                string f_Size = "";
                 byte quantity = 1;
+                byte effectHeight = 0;
 
+                // scan my array NameControls[] for matching controlName
                 for (int j = 0; j < NameControls.Length; j++)
                 {
                     string controlName = NameControls[j];
                     dynamic MyControl = FindName(controlName);
 
-                    if (controlName.Contains(Convert.ToString(i+1) + "_NozzleType"))
-                        { Type = MyControl.Text; }
+                    if (controlName.Contains(Convert.ToString(i + 1) + "_NozzleType"))
+                    { f_Type = MyControl.Text; }
 
-                    else if (controlName.Contains(Convert.ToString(i+1) + "_NozzleSize"))
-                        { Size = MyControl.Text; }
+                    else if (controlName.Contains(Convert.ToString(i + 1) + "_NozzleSize"))
+                    { f_Size = MyControl.Text; }
 
-                    else if (controlName.Contains(Convert.ToString(i+1) + "_EffectHeight"))
-                        { EffectHeight = Convert.ToByte(MyControl.Text); }
+                    else if (controlName.Contains(Convert.ToString(i + 1) + "_EffectHeight"))
+                    { effectHeight = Convert.ToByte(MyControl.Text); }
 
-
+                    else if (controlName.Contains(Convert.ToString(i + 1) + "_Quantity"))
+                    { quantity = Convert.ToByte(MyControl.Text); }
                 }
-                if (Type != "")
-                {
-                    MyProject.myWaterFixtures[i] = new FixtureWaterJet(Type, Size, EffectHeight, inWeight: 3);
-                }
-                
+
+                // choose fixture subclass based on value of "type"
+                if (f_Type == "jet")
+                {   MyProject.myWaterFixtures[i] = new FixtureWaterJet(f_Type, f_Size, effectHeight, inQuantity: quantity); }
+                else if (f_Type == "spray")
+                {   MyProject.myWaterFixtures[i] = new FixtureWaterSpray(f_Type, f_Size, effectHeight, inQuantity: quantity); }
+                else if (f_Type == "mist")
+                {   MyProject.myWaterFixtures[i] = new FixtureWaterMist(f_Type, f_Size, effectHeight, inQuantity: quantity); }
+
+
             }
 
             int systemTotalPressure = MyProject.getTotalPressure();

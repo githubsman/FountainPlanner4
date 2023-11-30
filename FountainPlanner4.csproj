@@ -65,6 +65,8 @@
     </Compile>
     <Compile Include="FixtureWater.cs" />
     <Compile Include="FixtureWaterJet.cs" />
+    <Compile Include="FixtureWaterMist.cs" />
+    <Compile Include="FixtureWaterSpray.cs" />
     <Compile Include="FountainProject.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="MainWindow.xaml.cs">
