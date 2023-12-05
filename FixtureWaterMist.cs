@@ -12,7 +12,7 @@
             quantity = inQuantity;
             f_minPressure = 7;
 
-            set_effectPressure(f_Type, f_Size, f_minPressure, effectHeight);
+            effectPressure = set_WorkingPressure(f_Size, effectHeight);
         }
     }
 }

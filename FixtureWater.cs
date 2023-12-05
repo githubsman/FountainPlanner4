@@ -18,11 +18,14 @@
  */
 
 using System;
+using System.Windows;
 
 namespace FountainDesign
 {
-    public class FixtureWater
+
+    public class FixtureWater : IFixtureWater
     {
+        //TODO Interfaces are here, now get Size and Type to affect calculation.
         public string f_Type;             // "Hollow bore", "jet"
         public string f_Size;             // small, medium, large
         public byte effectHeight;
@@ -32,6 +35,13 @@ namespace FountainDesign
         public byte effectPressure;
         //public byte effectPressure { get; set; }
 
+        public byte EffectHeight(string size, byte pressure)
+        { return 4;  }
+
+        public void WaterFlow(bool Active)
+        { }
+        public bool IsFlowActive()
+        { return false;  }
 
         public FixtureWater(string inType, string inSize, byte inEffectHeight, byte inQuantity)
         //public FixtureWater()
@@ -42,19 +52,28 @@ namespace FountainDesign
             effectHeight = inEffectHeight;
             quantity = inQuantity;
 
-            set_effectPressure(f_Type, f_Size, f_minPressure, effectHeight);
+            //set_effectPressure(f_Type, f_Size, f_minPressure, effectHeight);
 
 
 
         }
-            internal void set_effectPressure(string f_Type, string f_Size, byte f_minPressure, byte effectHeight)
-            {
-                double thisPressure = effectHeight / 2;  
-                thisPressure = thisPressure * f_minPressure;
 
-                effectPressure = Convert.ToByte(thisPressure);
-            }
+        public byte set_WorkingPressure(string size, byte effectHeight)
+        {
+            f_minPressure = 3;      //TODO let size determine base pressure
+            double thisPressure = effectHeight / 2;  
+            thisPressure = thisPressure * f_minPressure;
 
+            return Convert.ToByte(thisPressure);
+        }
+
+        //internal void set_effectPressure(string f_Type, string f_Size, byte f_minPressure, byte effectHeight)
+        //{
+        //    double thisPressure = effectHeight / 2;  
+        //    thisPressure = thisPressure * f_minPressure;
+
+        //    effectPressure = Convert.ToByte(thisPressure);
+        //}
 
     }
 }

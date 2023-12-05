@@ -53,8 +53,8 @@
 
             <TextBox Name="WaterFixture_2_Quantity"   Width="60" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" Text='1' />
             <ComboBox Name="WaterFixture_2_NozzleType"   Width="60" Grid.Row="2" Grid.Column="1">
+                <ComboBoxItem>jet</ComboBoxItem>
                 <ComboBoxItem IsSelected="True">spray</ComboBoxItem>
-                <ComboBoxItem>spray</ComboBoxItem>
                 <ComboBoxItem>mist</ComboBoxItem>
             </ComboBox>
             <ComboBox Name="WaterFixture_2_NozzleSize"   Width="120" Grid.Row="2" Grid.Column="2">
@@ -70,9 +70,9 @@
 
             <TextBox Name="WaterFixture_3_Quantity"   Width="60" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" Text='1' Margin="0,0.2" />
             <ComboBox Name="WaterFixture_3_NozzleType"   Width="60" Grid.Row="3" Grid.Column="1">
-                <ComboBoxItem IsSelected="True">mist</ComboBoxItem>
+                <ComboBoxItem>jet</ComboBoxItem>
                 <ComboBoxItem>spray</ComboBoxItem>
-                <ComboBoxItem>mist</ComboBoxItem>
+                <ComboBoxItem IsSelected="True">mist</ComboBoxItem>
             </ComboBox>
             <ComboBox Name="WaterFixture_3_NozzleSize"   Width="120" Grid.Row="3" Grid.Column="2">
                 <ComboBoxItem IsSelected="True">small</ComboBoxItem>
