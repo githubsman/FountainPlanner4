@@ -3,19 +3,18 @@
  * See real-life details about fountain nozzles in the docs/ folder - 
  *  enough to allow thorough modeling, but I don't expect to do that.  
  * 
- *    TODO allow a variety of sizes (for most kinds);
+ * TODO allow a variety of sizes (for most kinds);
  *           size determines basePressure,
  *           basePressure with effectHeight determines Pressure,
  *           Pressure contributes to totalPressure.
  * 
- *    FUTURE (or GONE WILD):  
- *      // flowActive       // For simulating system-total pressure states.
- *                                  // On/Off reflects a control system that
- *                                  // controls nozzles, either in sync or (apparent) random.
- *      // f_Construction   // Eng. spec'n:  "Machined cast bronze and brass construction..."
- *      // f_Aesthetic      // "A solid stream of water in a flat shape (like a fan)."
- *      // f_Cost           // cost in dollars
- *      // f_Weight         // hectograms  ( 5 == 1.1 lbs )*      
+ * SOMEDAY:  flowActive       // For simulating system-total pressure states.
+ * SOMEDAY:                           // On/Off reflects a control system that
+ * SOMEDAY:                           // controls nozzles, either in sync or (apparent) random.
+ * SOMEDAY:  f_Construction   // Eng. spec'n:  "Machined cast bronze and brass construction..."
+ * SOMEDAY:  f_Aesthetic      // "A solid stream of water in a flat shape (like a fan)."
+ * SOMEDAY:  f_Cost           // cost in dollars
+ * SOMEDAY:  f_Weight         // hectograms  ( 5 == 1.1 lbs )*      
  */
 
 using System;

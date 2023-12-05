@@ -9,12 +9,12 @@
     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
         <TextBlock FontSize="12px" Margin="8" Text="Configure water fixtures, learn the total water pressure." />
 
-        <!-- GONE WILD Set up formatting in App.xaml
+        <!-- SOMEDAY Set up formatting in App.xaml
              learn.microsoft.com/en-us/dotnet/desktop/wpf/controls/walkthrough-create-a-button-by-using-xaml?view=netframeworkdesktop-4.8 
+             TODO set up at home:  Settings > Task List  DEBUG FIXME SOMEDAY MARK TODO
                -->
 
-
-        <!-- GONE WILD Set up data binding  -->
+        <!-- SOMEDAY Set up data binding  -->
         <Grid Name="mainGrid">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />

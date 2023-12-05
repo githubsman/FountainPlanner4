@@ -4,8 +4,7 @@
  * 
  * BIG CHALLENGE, I don't know how to set up get, set. 
  * 
- * FUTURE (or GONE WILD):  
- *      // static int ProjectCost = 10000;      // cost constraint in dollars
+ * SOMEDAY: static int ProjectCost = 10000;      // cost constraint in dollars
  *      
  */
 
