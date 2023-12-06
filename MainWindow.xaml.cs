@@ -22,20 +22,15 @@ namespace FountainDesign
                         "WaterFixture_1_NozzleSize", "WaterFixture_2_NozzleSize", "WaterFixture_3_NozzleSize",
                         "WaterFixture_1_EffectHeight", "WaterFixture_2_EffectHeight", "WaterFixture_3_EffectHeight",
                         "WaterFixture_1_Quantity", "WaterFixture_2_Quantity", "WaterFixture_3_Quantity"};
-
         FountainProject MyProject;
+        
         public MainWindow()
         {
-            InitializeComponent();
-
-            MyProject = new FountainProject();
-
             //TODO Allow user to set MaxPressureTotal
-
+            
+            InitializeComponent();
+            MyProject = new FountainProject();
             MyProject.FountainProjectBegin();
-
-
-
         }
 
         void OnClick(object sender, RoutedEventArgs e)

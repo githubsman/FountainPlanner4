@@ -4,6 +4,22 @@
              xmlns:local="clr-namespace:FountainDesign"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="10" />
+            <Setter Property="TextAlignment" Value="2" />
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="FontSize" Value="10" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="ComboBoxItem">
+            <Setter Property="FontSize" Value="10" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="10" />
+            <Setter Property="TextAlignment" Value="2" />
+        </Style>
+
     </Application.Resources>
 </Application>

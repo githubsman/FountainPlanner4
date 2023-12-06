@@ -24,13 +24,13 @@ namespace FountainDesign
     {
         public int MaxPressureTotal = 1500;     // engineering constraint in PSI
                                                 // for simulating system-total pressure states
-
+        public static byte countLineItem = 3;
         //TODO make array count reflect user-form entries which vary in number of line-items 
-        public FixtureWater[] myWaterFixtures = new FixtureWater[3];
+        public FixtureWater[] myWaterFixtures = new FixtureWater[countLineItem];
 
         public void FountainProjectBegin()
         {
-            myWaterFixtures = new FixtureWater[3];
+            myWaterFixtures = new FixtureWater[3]; //should be countLineItem
         }
 
         public int getTotalPressure()
