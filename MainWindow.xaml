@@ -18,8 +18,8 @@
         <!-- SOMEDAY Set up data binding  -->
 
 
-        <Grid Name="mainGrid" >
-            <Grid.ColumnDefinitions FontSize="10">
+        <Grid Name="mainGrid">
+            <Grid.ColumnDefinitions>
                 <ColumnDefinition x:Name="Qty" Width="30" />
                 <ColumnDefinition x:Name="Type_" Width="90" />
                 <ColumnDefinition x:Name="Size" Width="90" />
@@ -38,13 +38,13 @@
             <TextBlock Grid.Row="0" Grid.Column="1" Text="TYPE" />
             <TextBlock Grid.Row="0" Grid.Column="2" Text="SIZE" />
             <TextBlock Grid.Row="0" Grid.Column="3" Text="HT" />
-            <TextBlock Grid.Row="0" Grid.Column="4" Text="GPI" />
+            <TextBlock Grid.Row="0" Grid.Column="4" Text="GPM" />
             <TextBlock Grid.Row="0" Grid.Column="5" Text="Total" />
 
             <!--  IsSelected="True" -->
 
-            <TextBox Name="WaterFixture_1_Quantity"  Grid.Row="1" Grid.Column="0" Text='1' />
-            <ComboBox Name="WaterFixture_1_NozzleType" Grid.Row="1" Grid.Column="1">
+            <TextBox Name="WaterFixture_1_Quantity"  Grid.Row="1" Grid.Column="0" Text='1' TextChanged="Quantity_TextChanged" />
+            <ComboBox Name="WaterFixture_1_NozzleType" Grid.Row="1" Grid.Column="1" SelectionChanged="NozzleType_SelectionChanged">
                 <ComboBoxItem IsSelected="True" >jet</ComboBoxItem>
                 <ComboBoxItem>spray</ComboBoxItem>
                 <ComboBoxItem>mist</ComboBoxItem>
@@ -55,8 +55,8 @@
                 <ComboBoxItem>large</ComboBoxItem>
             </ComboBox>
             <ComboBox Name="WaterFixture_1_EffectHeight" Grid.Row="1" Grid.Column="3">
-                <ComboBoxItem>4</ComboBoxItem>
-                <ComboBoxItem >6</ComboBoxItem>
+                <ComboBoxItem IsSelected="True">4</ComboBoxItem>
+                <ComboBoxItem>6</ComboBoxItem>
                 <ComboBoxItem>8</ComboBoxItem>
             </ComboBox>
             <TextBlock Name="WaterFixture_1_Pressure" Grid.Row="1" Grid.Column="4" Text="0" />
@@ -74,8 +74,8 @@
                 <ComboBoxItem>large</ComboBoxItem>
             </ComboBox>
             <ComboBox Name="WaterFixture_2_EffectHeight" Grid.Row="2" Grid.Column="3">
-                <ComboBoxItem>4</ComboBoxItem>
-                <ComboBoxItem >6</ComboBoxItem>
+                <ComboBoxItem IsSelected="True">4</ComboBoxItem>
+                <ComboBoxItem>6</ComboBoxItem>
                 <ComboBoxItem>8</ComboBoxItem>
             </ComboBox>
             <TextBlock Name="WaterFixture_2_Pressure" Grid.Row="2" Grid.Column="4" Text="0" />
@@ -93,8 +93,8 @@
                 <ComboBoxItem>large</ComboBoxItem>
             </ComboBox>
             <ComboBox Name="WaterFixture_3_EffectHeight" Grid.Row="3" Grid.Column="3">
-                <ComboBoxItem>4</ComboBoxItem>
-                <ComboBoxItem >6</ComboBoxItem>
+                <ComboBoxItem IsSelected="True">4</ComboBoxItem>
+                <ComboBoxItem>6</ComboBoxItem>
                 <ComboBoxItem>8</ComboBoxItem>
             </ComboBox>
             <TextBlock Name="WaterFixture_3_Pressure" Grid.Row="3" Grid.Column="4" Text="0" />

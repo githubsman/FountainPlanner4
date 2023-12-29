@@ -19,14 +19,16 @@ namespace FountainDesign
     public partial class MainWindow : Window
     {
         string[] NameControls = {"WaterFixture_1_NozzleType", "WaterFixture_2_NozzleType", "WaterFixture_3_NozzleType",
-                        "WaterFixture_1_NozzleSize", "WaterFixture_2_NozzleSize", "WaterFixture_3_NozzleSize",
-                        "WaterFixture_1_EffectHeight", "WaterFixture_2_EffectHeight", "WaterFixture_3_EffectHeight",
-                        "WaterFixture_1_Quantity", "WaterFixture_2_Quantity", "WaterFixture_3_Quantity"};
+                                "WaterFixture_1_NozzleSize", "WaterFixture_2_NozzleSize", "WaterFixture_3_NozzleSize",
+                                "WaterFixture_1_EffectHeight", "WaterFixture_2_EffectHeight", "WaterFixture_3_EffectHeight",
+                                "WaterFixture_1_Quantity", "WaterFixture_2_Quantity", "WaterFixture_3_Quantity",
+                                "WaterFixture_1_Pressure", "WaterFixture_2_Pressure", "WaterFixture_3_Pressure",
+                                "WaterFixture_1_PressureTotal", "WaterFixture_2_PressureTotal", "WaterFixture_3_PressureTotal"};
         FountainProject MyProject;
         
         public MainWindow()
         {
-            //TODO Allow user to set MaxPressureTotal
+            //TODO Invite user to bogin design by setting MaxPressureTotal
             
             InitializeComponent();
             MyProject = new FountainProject();
@@ -70,11 +72,22 @@ namespace FountainDesign
                 else if (f_Type == "mist")
                 {   MyProject.myWaterFixtures[i] = new FixtureWaterMist(f_Type, f_Size, effectHeight, inQuantity: quantity); }
 
-
+                //TODO Calculate pressure for this array member    AND Show the value in the _Pressure text box 
+                //TODO Calculate pressure multiplied by item count AND Show the value in the _PressureTotal text box 
             }
 
             int systemTotalPressure = MyProject.getTotalPressure();
             resultPSI.Text = Convert.ToString(systemTotalPressure);
+        }
+
+        private void NozzleType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //CalculateItemPressure();
+        }
+
+        private void Quantity_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //CalculateItemPressure();
         }
     }
 }
