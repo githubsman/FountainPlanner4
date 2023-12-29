@@ -6,7 +6,7 @@
     <Application.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="FontSize" Value="10" />
-            <Setter Property="TextAlignment" Value="2" />
+            <Setter Property="TextAlignment" Value="Left" />
         </Style>
         <Style TargetType="ComboBox">
             <Setter Property="FontSize" Value="10" />
@@ -18,7 +18,7 @@
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="FontSize" Value="10" />
-            <Setter Property="TextAlignment" Value="2" />
+            <Setter Property="TextAlignment" Value="Left" />
         </Style>
 
     </Application.Resources>
