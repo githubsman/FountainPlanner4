@@ -1,7 +1,7 @@
 ﻿
 /* FixtureWater is the base class for a water nozzle.  
  * See real-life details about fountain nozzles in the docs/ folder - 
- *  enough to allow thorough modeling, but I don't expect to do that.  
+ *  enough to support thorough modeling, but I don't expect to do that.  
  * 
  * Varables with f_prefix are intrinsic to the nozzle;
  *  variables otherwise depend on implementation. 
@@ -31,12 +31,12 @@ namespace FountainDesign
     public class FixtureWater : IFixtureWater
     {
         //TODO Enter nozzle Type into calculation.
-        public string f_Type;             // "Hollow bore", "jet"
-        public string f_Size;             // small, medium, large
+        public string f_Type;           // "Hollow bore", "jet"
+        public string f_Size;           // small, medium, large
         public byte effectHeight;
         public byte quantity;
-        public byte f_Weight;             // hectograms  ( 5 == 1.1 lbs )
-        public byte f_minPressure;        // PSI
+        public byte f_Weight;           // hectograms  ( 5 == 1.1 lbs )
+        public byte f_minPressure;      // PSI
         public byte effectPressure;
         //public byte effectPressure { get; set; }
 
@@ -66,9 +66,9 @@ namespace FountainDesign
             //     case "large":   f_minPressure = 5; break;
             // }
 
-            // FIXME f_minPressure presents well in Debug, but final calculation is not affected. 
+            // FIXME f_minPressure presents well in Debug, yay.  But isn't used in final calculation. 
             double thisPressure = effectHeight / 2;  
-            thisPressure = thisPressure * f_minPressure;
+            thisPressure *= f_minPressure;
 
             return Convert.ToByte(thisPressure);
         }
