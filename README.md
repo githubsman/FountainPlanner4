@@ -13,7 +13,7 @@ Simulates engineering design for an architectural fountain.
  ** 
  
 ## Someday, Maybe
- * Unity for 3D representation. SG 87
+ * Unity for 3D representation. HFCS 87
  
  
-SG means __Head First C#__, 4th ed. by A Stellman and J Greene.
+HFCS means __Head First C#__, 4th ed. by A Stellman and J Greene.
